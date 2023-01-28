@@ -3,7 +3,7 @@ import {
   endTracking,
   hide,
   TransitionsManager,
-} from "../helper_functions.js";
+} from "../helperFunctions.js";
 
 let svg, viewBox, paddedViewBox, dataset, xScale, yScale;
 

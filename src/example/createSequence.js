@@ -17,7 +17,7 @@ setUpNavigation();
 manager.drawStepWithAutoReverse(false, drawFunctions[0]);
 
 function setUpNavigation() {
-  document.getElementById("step").textContent = "Step: 0";
+  document.getElementById("step").textContent = "View: 0";
 
   d3.selectAll(".nav-button").on("click", function () {
     const id = d3.select(this).attr("id");
@@ -35,7 +35,7 @@ function setUpNavigation() {
       }
 
       document.getElementById("step").textContent =
-        "Step: " + manager.getStep();
+        "View: " + manager.getStep();
     }
   });
 }

@@ -93,10 +93,10 @@ export class TransitionsManager {
     if (!attrsList) this.#attributeValuesPerElement.set(id, [list]);
     else attrsList.push(list);
 
-    this.addIdToStep(id);
+    this.#addIdToStep(id);
   }
 
-  addIdToStep(id) {
+  #addIdToStep(id) {
     const idList = this.#changedElementsPerStep[this.#step];
     if (!idList.includes(id)) {
       idList.push(id);

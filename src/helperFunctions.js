@@ -1,4 +1,4 @@
-d3.selection.prototype.save = function (manager) {
+d3.selection.prototype.saveState = function (manager) {
   this.each(function () {
     manager.save(d3.select(this));
   });
@@ -40,14 +40,14 @@ export class TransitionsManager {
       this.#changedElementsPerStep[i] = [];
   }
 
-  revertStep() {
+  #revertStep() {
     let idList = this.#changedElementsPerStep[this.#step + 1];
     idList.map((id) => this.#resetToPrevState(d3.select("#" + id)));
     this.#changedElementsPerStep[this.#step + 1] = [];
   }
 
   drawStepWithAutoReverse(back, customFunction) {
-    if (back) this.revertStep();
+    if (back) this.#revertStep();
     else customFunction();
   }
 

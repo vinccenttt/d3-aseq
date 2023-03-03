@@ -111,7 +111,7 @@ function drawStep0() {
     .attr("x", (d, i) => xScale(i))
     .attr("height", 0)
     .attr("y", viewBox.paddingTop + paddedViewBox.height)
-    .save(manager);
+    .saveState(manager);
 
   // transition bars
   bars
@@ -132,7 +132,7 @@ function drawStep1() {
       .attr("id", "y-axis")
       .attr("opacity", 0)
       .attr("transform", "translate(-10,0)")
-      .save(manager)
+      .saveState(manager)
       .call(yAxisGenerator)
       .selectAll(".tick text")
       .attr("font-size", "20")
@@ -156,7 +156,7 @@ function drawStep2() {
       .attr("id", "mean-vis")
       .attr("opacity", 0)
       .attr("transform", "translate(0,0)") // needs to be set!
-      .save(manager);
+      .saveState(manager);
 
     meanVis
       .append("rect")
@@ -223,7 +223,7 @@ function drawStep4() {
       .attr("font-family", "sans-serif")
       .attr("y", 0)
       .attr("x", viewBox.paddingLeft + 0.5 * paddedViewBox.width)
-      .save(manager)
+      .saveState(manager)
   );
 
   // transition text
